@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="products-search">
+  <input type="text" id="products-search-txt" autofocus>
+  <div class="results" id="products-search-results"></div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $('#search').bind('railsAutocomplete.select', function(event, data){
+        $('#search-form').submit()
+    });
+
+</script>
+
+<script>
+    $(function() {
+        new app.Products;
+    });
+</script>
+
+
+<%= zoom_image_tag("images1.jpeg"); %>
+<h1>Listing Products</h1>
+<%= ImageZoomer::VERSION %>
+
+<div id="map"></div>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
